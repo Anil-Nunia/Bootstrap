@@ -1,108 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assests/css/style.css">
-    <title>Walletpage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>  
-</head>
-
-<body class="overflow-x-hidden">
-    <nav class="navbar navbar-expand-lg bg-color overflow-x-hidden">
-        <div class="container-fluid">
-            <a class="navbar-brand mtb-img1" href="#"><svg width="60" height="60" viewBox="0 0 60 60" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <rect width="60" height="60" fill="url(#pattern0)" />
-                    <defs>
-                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                            <use xlink:href="#image0_2_7351" transform="translate(-0.00833333) scale(0.00833333)" />
-                        </pattern>
-                        <image id="image0_2_7351" width="122" height="120"
-                            xlink:href="data:image/png;base64,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" />
-                    </defs>
-                </svg>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-md">
-                    <li class="nav-item ml_nft">
-                        <a class="nav-link active nav-nft" aria-current="page" href="#">NFTsee</a>
-                    </li>
-                    <li class="nav-item ml_feed">
-                        <a class="nav-link fs_18 fw_400 fc_b ff " href="#">Feed</a>
-                    </li>
-                    <li class="nav-item ml_wallet ">
-                        <a class="nav-link fs_18 fw_400 fc_b ff" href="#">Wallet</a>
-                    </li>
-                   
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 input1" type="search" placeholder="Search here..."
-                        aria-label="Search">
-                </form>
-                <li class="switch position-relative">
-                    <input class="switch__checkbox" type="checkbox" id="switch" hidden />
-                    <label class="switch__label" for="switch"></label>
-                </li>
-                <li><a href="#"><img src="./assests/image/imgE1.png" alt="imge1" class="imge2 w-10"></a></li>
-            </div>
-        </div>
-    </nav> 
-
-<section class="overflow-x-hidden">
-    <div class="hero_bg min-vh-100 overflow-x-hidden"></div>
+<section>
+    <div class="hero_bg min-vh-100 overflow-hidden"></div>
     <div class="my_container">
-        <div class="card-boxs overflow-x-hidden">
+        <div class="card-boxs overflow-x-hidden ">
             <div class="row">
-                <div class="col-12 col-md-10 col-lg-10 d-flex">
-                   <div class="row">
-                    <div class="col-12 col-md-6">
-                        <span class=" mr_imge13 imge13-sm"><img src="./assests/image/imgEll3.png" alt="img13" class=" imge13 w-100">
-                        </span>
+                <div class=" col-10 d-flex">
+                    <div class="mr_imge13"><img src="./assests/image/imgEll3.png" alt="img13" class=" imge13 w-100">
                     </div>
-                    <div class="col-12 col-md-6  d-flex flex-column mt-lg-lorem">
-                        <span class="d-flex flex-column mtop-24px t-align mt-lg-lorem">
-                            <span class="fs_36 fw_600 ff fc1 mt-l">Lorem Mollis</span>
+                    <div>
+                        <span class="d-flex flex-column">
+                            <span class="fs_36 fw_600 ff fc1">Lorem Mollis</span>
                             <span><a href="#" class="fc_b fs_18 ff">@loremmollis</a></span>
                         </span>
-                        <div class="row px-34 align-items-center px-34-lg mt-md-24">
-                            <span class="col-12 col-sm-4 relative d-flex flex-column  mtop-24px">
+                        <div class="d-flex px-34">
+                            <span class="relative d-flex flex-column">
                                 <span class="ff fs_24 fw_500 fc_b timeline1">156</span>
                                 <span class="ff fs_14 fc_b">Following</span>
                             </span>
-                            <span class="col-12 col-sm-4 plr_flower mlr-flower relative flex-column d-flex align-items-center  mtop-24px mlrs-sm">
+                            <span class="plr_flower relative flex-column d-flex">
                                 <span class="ff fs_24 fw_500 fc_b timeline2">457</span>
                                 <span class="ff fs_14 fc_b">Followers</span>
                             </span>
-                            <span class="col-12 col-sm-4 d-flex flex-column  mtop-24px">
+                            <span class="d-flex flex-column">
                                 <span class="ff fs_24 fw_500 fc_b">382</span>
                                 <span class="ff fs_14 fc_b">Owned</span>
                             </span>
                         </div>
 
-                   </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-2 col-lg-2 btn-edit-sm">
+                <div class="col-2">
                     <span>
-                        <a href="#" class="ff fs_18 fw_600 fc_w btn_edit ">Edit Profile</a>
+                        <a href="#" class="ff fs_18 fw_600 fc_w btn_edit">Edit Profile</a>
                     </span>
                 </div>
 
@@ -124,134 +52,15 @@
         </div>
     </div>
 </section>
-<section class="mt-s overflow-x-hidden">
+<section class="mt-s">
     <div class="my_container">
         <div class="d-grid sm-d-grid md-d-grid lg-d-grid">
             <div class="img-g">
                 <button type="button" class="btn btn-primary bg-white img-b" data-toggle="modal"
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imageu1.png" alt="gp" class="w-100">
-                        <div class="d-flex justify-content-between position-absolute icon align-items-center">
-                            <span class="d-flex align-items-center">
-                                <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z"
-                                                stroke="white" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </a>
-                                </span>
-                                <span class="ml-15 mr-35 fc_w fs-18s fws ff">10</span>
-                                <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M14 19C17.771 19 19.657 19 20.828 17.828C22 16.657 22 14.771 22 11C22 7.229 22 5.343 20.828 4.172C19.657 3 17.771 3 14 3H10C6.229 3 4.343 3 3.172 4.172C2 5.343 2 7.229 2 11C2 14.771 2 16.657 3.172 17.828C3.825 18.482 4.7 18.771 6 18.898"
-                                                stroke="white" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path
-                                                d="M14.0002 19C12.7642 19 11.4022 19.5 10.1592 20.145C8.16124 21.182 7.16224 21.701 6.67024 21.37C6.17824 21.04 6.27124 20.015 6.45824 17.966L6.50024 17.5"
-                                                stroke="white" stroke-width="2" stroke-linecap="round" />
-                                        </svg>
-
-                                    </a></span>
-                                <span class="ml-15 fc_w fs-18s fws ff mr_88">20</span>
-
-                                <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M17.5002 22.0002C16.9664 22.0064 16.4385 21.889 15.9576 21.6572C15.4768 21.4253 15.0561 21.0854 14.7285 20.6639C14.4008 20.2425 14.1752 19.7509 14.0692 19.2278C13.9631 18.7046 13.9796 18.164 14.1172 17.6482L7.85722 14.0702C7.32914 14.554 6.66515 14.8639 5.95514 14.9578C5.24513 15.0517 4.52341 14.9252 3.8877 14.5953C3.25199 14.2655 2.73301 13.7482 2.40101 13.1136C2.06902 12.479 1.94005 11.7577 2.03158 11.0474C2.12312 10.3371 2.43072 9.67206 2.91274 9.14236C3.39477 8.61266 4.02793 8.24388 4.72649 8.08596C5.42506 7.92803 6.15528 7.9886 6.81828 8.25944C7.48129 8.53029 8.04504 8.99834 8.43322 9.60021L14.1162 6.35121C14.0427 6.07339 14.0037 5.78757 14.0002 5.50021C13.9933 4.68844 14.2662 3.89907 14.7732 3.26501C15.2801 2.63095 15.99 2.19093 16.7834 2.01903C17.5768 1.84714 18.4052 1.95388 19.1291 2.32127C19.853 2.68866 20.4282 3.29427 20.7579 4.03613C21.0875 4.77798 21.1515 5.61077 20.939 6.39426C20.7265 7.17775 20.2505 7.86409 19.5912 8.33772C18.9319 8.81134 18.1295 9.04333 17.3192 8.9946C16.5088 8.94588 15.74 8.61943 15.1422 8.07021L8.99222 11.5852C8.98522 11.8452 8.94922 12.1022 8.88322 12.3532L15.1432 15.9302C15.5622 15.5457 16.0687 15.2692 16.6187 15.1248C17.1687 14.9804 17.7457 14.9724 18.2995 15.1014C18.8534 15.2305 19.3674 15.4927 19.7969 15.8654C20.2264 16.2381 20.5585 16.71 20.7643 17.2401C20.9702 17.7702 21.0436 18.3426 20.9781 18.9075C20.9127 19.4724 20.7104 20.0128 20.3888 20.4818C20.0671 20.9508 19.636 21.3342 19.1326 21.5988C18.6292 21.8634 18.0689 22.0012 17.5002 22.0002ZM17.5002 17.0002C17.1024 17.0002 16.7209 17.1582 16.4396 17.4396C16.1583 17.7209 16.0002 18.1024 16.0002 18.5002C16.0002 18.898 16.1583 19.2796 16.4396 19.5609C16.7209 19.8422 17.1024 20.0002 17.5002 20.0002C17.898 20.0002 18.2796 19.8422 18.5609 19.5609C18.8422 19.2796 19.0002 18.898 19.0002 18.5002C19.0002 18.1024 18.8422 17.7209 18.5609 17.4396C18.2796 17.1582 17.898 17.0002 17.5002 17.0002ZM5.50022 10.0002C5.10239 10.0002 4.72086 10.1582 4.43956 10.4396C4.15825 10.7209 4.00022 11.1024 4.00022 11.5002C4.00022 11.898 4.15825 12.2796 4.43956 12.5609C4.72086 12.8422 5.10239 13.0002 5.50022 13.0002C5.89804 13.0002 6.27957 12.8422 6.56088 12.5609C6.84218 12.2796 7.00022 11.898 7.00022 11.5002C7.00022 11.1024 6.84218 10.7209 6.56088 10.4396C6.27957 10.1582 5.89804 10.0002 5.50022 10.0002ZM17.5002 4.00021C17.3032 4.00021 17.1082 4.03901 16.9262 4.11439C16.7442 4.18977 16.5788 4.30026 16.4396 4.43955C16.3003 4.57884 16.1898 4.7442 16.1144 4.92619C16.039 5.10817 16.0002 5.30323 16.0002 5.50021C16.0002 5.69719 16.039 5.89225 16.1144 6.07424C16.1898 6.25622 16.3003 6.42158 16.4396 6.56087C16.5788 6.70016 16.7442 6.81065 16.9262 6.88603C17.1082 6.96141 17.3032 7.00021 17.5002 7.00021C17.898 7.00021 18.2796 6.84218 18.5609 6.56087C18.8422 6.27957 19.0002 5.89804 19.0002 5.50021C19.0002 5.10239 18.8422 4.72086 18.5609 4.43955C18.2796 4.15825 17.898 4.00021 17.5002 4.00021Z"
-                                                fill="white" />
-                                        </svg>
-                                    </a></span>
-                            </span>
-                            
-                        </div>
-                    </div>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body card_box position-relative">
-                                <button type="button" class="close position-absolute btn_s" data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span aria-hidden="true"><img src="./assests/image/imgsmall.png" alt="imgsmall"
-                                            class="imgsmall"></span>
-                                </button>
-                                <div class="d-flex justify-content-between">
-                                    <span class="d-flex">
-                                        <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z"
-                                                        stroke="black" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                </svg>
-                                            </a>
-                                        </span>
-                                        <span class="ml-15 mr-35 maincolor fs-18s fws ff">10</span>
-                                        <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M14 19C17.771 19 19.657 19 20.828 17.828C22 16.657 22 14.771 22 11C22 7.229 22 5.343 20.828 4.172C19.657 3 17.771 3 14 3H10C6.229 3 4.343 3 3.172 4.172C2 5.343 2 7.229 2 11C2 14.771 2 16.657 3.172 17.828C3.825 18.482 4.7 18.771 6 18.898"
-                                                        stroke="black" stroke-width="2" stroke-linecap="round"
-                                                        stroke-linejoin="round" />
-                                                    <path
-                                                        d="M14.0002 19C12.7642 19 11.4022 19.5 10.1592 20.145C8.16124 21.182 7.16224 21.701 6.67024 21.37C6.17824 21.04 6.27124 20.015 6.45824 17.966L6.50024 17.5"
-                                                        stroke="black" stroke-width="2" stroke-linecap="round" />
-                                                </svg>
-                                            </a></span>
-                                        <span class="ml-15 maincolor fs-18s fws ff">20</span>
-                                    </span>
-                                    <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M17.5002 22C16.9664 22.0061 16.4385 21.8887 15.9576 21.6569C15.4768 21.4251 15.0561 21.0851 14.7285 20.6637C14.4008 20.2422 14.1752 19.7507 14.0692 19.2275C13.9631 18.7043 13.9796 18.1637 14.1172 17.648L7.85722 14.07C7.32914 14.5538 6.66515 14.8636 5.95514 14.9575C5.24513 15.0515 4.52341 14.9249 3.8877 14.5951C3.25199 14.2652 2.73301 13.748 2.40101 13.1134C2.06902 12.4788 1.94005 11.7575 2.03158 11.0472C2.12312 10.3369 2.43072 9.67182 2.91274 9.14212C3.39477 8.61241 4.02793 8.24363 4.72649 8.08571C5.42506 7.92779 6.15528 7.98835 6.81828 8.2592C7.48129 8.53005 8.04504 8.99809 8.43322 9.59997L14.1162 6.35097C14.0427 6.07315 14.0037 5.78732 14.0002 5.49997C13.9933 4.6882 14.2662 3.89883 14.7732 3.26477C15.2801 2.6307 15.99 2.19068 16.7834 2.01879C17.5768 1.8469 18.4052 1.95363 19.1291 2.32103C19.853 2.68842 20.4282 3.29403 20.7579 4.03588C21.0875 4.77774 21.1515 5.61052 20.939 6.39401C20.7265 7.1775 20.2505 7.86385 19.5912 8.33747C18.9319 8.8111 18.1295 9.04308 17.3192 8.99436C16.5088 8.94564 15.74 8.61918 15.1422 8.06997L8.99222 11.585C8.98522 11.845 8.94922 12.102 8.88322 12.353L15.1432 15.93C15.5622 15.5455 16.0687 15.269 16.6187 15.1246C17.1687 14.9801 17.7457 14.9721 18.2995 15.1012C18.8534 15.2302 19.3674 15.4925 19.7969 15.8652C20.2264 16.2379 20.5585 16.7098 20.7643 17.2399C20.9702 17.77 21.0436 18.3423 20.9781 18.9072C20.9127 19.4721 20.7104 20.0125 20.3888 20.4815C20.0671 20.9505 19.636 21.334 19.1326 21.5986C18.6292 21.8632 18.0689 22.001 17.5002 22ZM17.5002 17C17.1024 17 16.7209 17.158 16.4396 17.4393C16.1583 17.7206 16.0002 18.1021 16.0002 18.5C16.0002 18.8978 16.1583 19.2793 16.4396 19.5606C16.7209 19.8419 17.1024 20 17.5002 20C17.898 20 18.2796 19.8419 18.5609 19.5606C18.8422 19.2793 19.0002 18.8978 19.0002 18.5C19.0002 18.1021 18.8422 17.7206 18.5609 17.4393C18.2796 17.158 17.898 17 17.5002 17ZM5.50022 9.99997C5.10239 9.99997 4.72086 10.158 4.43956 10.4393C4.15825 10.7206 4.00022 11.1021 4.00022 11.5C4.00022 11.8978 4.15825 12.2793 4.43956 12.5606C4.72086 12.8419 5.10239 13 5.50022 13C5.89804 13 6.27957 12.8419 6.56088 12.5606C6.84218 12.2793 7.00022 11.8978 7.00022 11.5C7.00022 11.1021 6.84218 10.7206 6.56088 10.4393C6.27957 10.158 5.89804 9.99997 5.50022 9.99997ZM17.5002 3.99997C17.3032 3.99997 17.1082 4.03877 16.9262 4.11415C16.7442 4.18953 16.5788 4.30002 16.4396 4.43931C16.3003 4.57859 16.1898 4.74395 16.1144 4.92594C16.039 5.10793 16.0002 5.30298 16.0002 5.49997C16.0002 5.69695 16.039 5.892 16.1144 6.07399C16.1898 6.25598 16.3003 6.42134 16.4396 6.56063C16.5788 6.69992 16.7442 6.8104 16.9262 6.88579C17.1082 6.96117 17.3032 6.99997 17.5002 6.99997C17.898 6.99997 18.2796 6.84193 18.5609 6.56063C18.8422 6.27932 19.0002 5.89779 19.0002 5.49997C19.0002 5.10214 18.8422 4.72061 18.5609 4.43931C18.2796 4.158 17.898 3.99997 17.5002 3.99997Z"
-                                                    fill="black" />
-                                            </svg>
-                                        </a></span>
-                                </div>
-                                <p class="fc_b fs-18s fws ff">Comments</p>
-                                <span class="d-flex"><span><img src="./assests/image/./imgu2.png"
-                                            alt="imgu2 w-100"></span>
-                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
-                                            Doe</span>
-                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
-                                            <br>
-                                            ultrices.</span></span></span>
-                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgu3.png"
-                                            alt="imgu2 w-100"></span>
-                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
-                                            Doe</span>
-                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
-                                            <br>
-                                            ultrices.</span></span></span>
-                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgE4.png"
-                                            alt="imgu2 w-100"></span>
-                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
-                                            Doe</span>
-                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
-                                            <br>
-                                            ultrices.</span></span></span>
-                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgE5.png"
-                                            alt="imgu2 w-100"></span>
-                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
-                                            Doe</span>
-                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
-                                            <br>
-                                            ultrices.</span></span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="img-g">
-                <button type="button" class="btn btn-primary bg-white img-b" data-toggle="modal"
-                    data-target="#exampleModal">
-                    <div class="position-relative"><img src="./assests/image/images1.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -362,6 +171,128 @@
                                             <br>
                                             ultrices.</span></span></span>
                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="img-g">
+                <button type="button" class="btn btn-primary bg-white img-b" data-toggle="modal"
+                    data-target="#exampleModal">
+                    <div class="position-relative"><img src="./assests/image/images1.png" alt="gp" class="w-100">
+                        <div class="d-flex justify-content-between position-absolute icon">
+                            <span class="d-flex">
+                                <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z"
+                                                stroke="white" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </span>
+                                <span class="ml-15 mr-35 fc_w fs-18s fws ff">10</span>
+                                <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14 19C17.771 19 19.657 19 20.828 17.828C22 16.657 22 14.771 22 11C22 7.229 22 5.343 20.828 4.172C19.657 3 17.771 3 14 3H10C6.229 3 4.343 3 3.172 4.172C2 5.343 2 7.229 2 11C2 14.771 2 16.657 3.172 17.828C3.825 18.482 4.7 18.771 6 18.898"
+                                                stroke="white" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14.0002 19C12.7642 19 11.4022 19.5 10.1592 20.145C8.16124 21.182 7.16224 21.701 6.67024 21.37C6.17824 21.04 6.27124 20.015 6.45824 17.966L6.50024 17.5"
+                                                stroke="white" stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+
+                                    </a></span>
+                                <span class="ml-15 fc_w fs-18s fws ff mr_88">20</span>
+                            </span>
+                            <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.5002 22.0002C16.9664 22.0064 16.4385 21.889 15.9576 21.6572C15.4768 21.4253 15.0561 21.0854 14.7285 20.6639C14.4008 20.2425 14.1752 19.7509 14.0692 19.2278C13.9631 18.7046 13.9796 18.164 14.1172 17.6482L7.85722 14.0702C7.32914 14.554 6.66515 14.8639 5.95514 14.9578C5.24513 15.0517 4.52341 14.9252 3.8877 14.5953C3.25199 14.2655 2.73301 13.7482 2.40101 13.1136C2.06902 12.479 1.94005 11.7577 2.03158 11.0474C2.12312 10.3371 2.43072 9.67206 2.91274 9.14236C3.39477 8.61266 4.02793 8.24388 4.72649 8.08596C5.42506 7.92803 6.15528 7.9886 6.81828 8.25944C7.48129 8.53029 8.04504 8.99834 8.43322 9.60021L14.1162 6.35121C14.0427 6.07339 14.0037 5.78757 14.0002 5.50021C13.9933 4.68844 14.2662 3.89907 14.7732 3.26501C15.2801 2.63095 15.99 2.19093 16.7834 2.01903C17.5768 1.84714 18.4052 1.95388 19.1291 2.32127C19.853 2.68866 20.4282 3.29427 20.7579 4.03613C21.0875 4.77798 21.1515 5.61077 20.939 6.39426C20.7265 7.17775 20.2505 7.86409 19.5912 8.33772C18.9319 8.81134 18.1295 9.04333 17.3192 8.9946C16.5088 8.94588 15.74 8.61943 15.1422 8.07021L8.99222 11.5852C8.98522 11.8452 8.94922 12.1022 8.88322 12.3532L15.1432 15.9302C15.5622 15.5457 16.0687 15.2692 16.6187 15.1248C17.1687 14.9804 17.7457 14.9724 18.2995 15.1014C18.8534 15.2305 19.3674 15.4927 19.7969 15.8654C20.2264 16.2381 20.5585 16.71 20.7643 17.2401C20.9702 17.7702 21.0436 18.3426 20.9781 18.9075C20.9127 19.4724 20.7104 20.0128 20.3888 20.4818C20.0671 20.9508 19.636 21.3342 19.1326 21.5988C18.6292 21.8634 18.0689 22.0012 17.5002 22.0002ZM17.5002 17.0002C17.1024 17.0002 16.7209 17.1582 16.4396 17.4396C16.1583 17.7209 16.0002 18.1024 16.0002 18.5002C16.0002 18.898 16.1583 19.2796 16.4396 19.5609C16.7209 19.8422 17.1024 20.0002 17.5002 20.0002C17.898 20.0002 18.2796 19.8422 18.5609 19.5609C18.8422 19.2796 19.0002 18.898 19.0002 18.5002C19.0002 18.1024 18.8422 17.7209 18.5609 17.4396C18.2796 17.1582 17.898 17.0002 17.5002 17.0002ZM5.50022 10.0002C5.10239 10.0002 4.72086 10.1582 4.43956 10.4396C4.15825 10.7209 4.00022 11.1024 4.00022 11.5002C4.00022 11.898 4.15825 12.2796 4.43956 12.5609C4.72086 12.8422 5.10239 13.0002 5.50022 13.0002C5.89804 13.0002 6.27957 12.8422 6.56088 12.5609C6.84218 12.2796 7.00022 11.898 7.00022 11.5002C7.00022 11.1024 6.84218 10.7209 6.56088 10.4396C6.27957 10.1582 5.89804 10.0002 5.50022 10.0002ZM17.5002 4.00021C17.3032 4.00021 17.1082 4.03901 16.9262 4.11439C16.7442 4.18977 16.5788 4.30026 16.4396 4.43955C16.3003 4.57884 16.1898 4.7442 16.1144 4.92619C16.039 5.10817 16.0002 5.30323 16.0002 5.50021C16.0002 5.69719 16.039 5.89225 16.1144 6.07424C16.1898 6.25622 16.3003 6.42158 16.4396 6.56087C16.5788 6.70016 16.7442 6.81065 16.9262 6.88603C17.1082 6.96141 17.3032 7.00021 17.5002 7.00021C17.898 7.00021 18.2796 6.84218 18.5609 6.56087C18.8422 6.27957 19.0002 5.89804 19.0002 5.50021C19.0002 5.10239 18.8422 4.72086 18.5609 4.43955C18.2796 4.15825 17.898 4.00021 17.5002 4.00021Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a></span>
+                        </div>
+                    </div>
+
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body card_box position-relative">
+                                <button type="button" class="close position-absolute btn_s" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true"><img src="./assests/image/imgsmall.png" alt="imgsmall"
+                                            class="imgsmall"></span>
+                                </button>
+                                <div class="d-flex justify-content-between">
+                                    <span class="d-flex">
+                                        <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z"
+                                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                        </span>
+                                        <span class="ml-15 mr-35 maincolor fs-18s fws ff">10</span>
+                                        <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M14 19C17.771 19 19.657 19 20.828 17.828C22 16.657 22 14.771 22 11C22 7.229 22 5.343 20.828 4.172C19.657 3 17.771 3 14 3H10C6.229 3 4.343 3 3.172 4.172C2 5.343 2 7.229 2 11C2 14.771 2 16.657 3.172 17.828C3.825 18.482 4.7 18.771 6 18.898"
+                                                        stroke="black" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                    <path
+                                                        d="M14.0002 19C12.7642 19 11.4022 19.5 10.1592 20.145C8.16124 21.182 7.16224 21.701 6.67024 21.37C6.17824 21.04 6.27124 20.015 6.45824 17.966L6.50024 17.5"
+                                                        stroke="black" stroke-width="2" stroke-linecap="round" />
+                                                </svg>
+                                            </a></span>
+                                        <span class="ml-15 maincolor fs-18s fws ff">20</span>
+                                    </span>
+                                    <span><a href="#"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.5002 22C16.9664 22.0061 16.4385 21.8887 15.9576 21.6569C15.4768 21.4251 15.0561 21.0851 14.7285 20.6637C14.4008 20.2422 14.1752 19.7507 14.0692 19.2275C13.9631 18.7043 13.9796 18.1637 14.1172 17.648L7.85722 14.07C7.32914 14.5538 6.66515 14.8636 5.95514 14.9575C5.24513 15.0515 4.52341 14.9249 3.8877 14.5951C3.25199 14.2652 2.73301 13.748 2.40101 13.1134C2.06902 12.4788 1.94005 11.7575 2.03158 11.0472C2.12312 10.3369 2.43072 9.67182 2.91274 9.14212C3.39477 8.61241 4.02793 8.24363 4.72649 8.08571C5.42506 7.92779 6.15528 7.98835 6.81828 8.2592C7.48129 8.53005 8.04504 8.99809 8.43322 9.59997L14.1162 6.35097C14.0427 6.07315 14.0037 5.78732 14.0002 5.49997C13.9933 4.6882 14.2662 3.89883 14.7732 3.26477C15.2801 2.6307 15.99 2.19068 16.7834 2.01879C17.5768 1.8469 18.4052 1.95363 19.1291 2.32103C19.853 2.68842 20.4282 3.29403 20.7579 4.03588C21.0875 4.77774 21.1515 5.61052 20.939 6.39401C20.7265 7.1775 20.2505 7.86385 19.5912 8.33747C18.9319 8.8111 18.1295 9.04308 17.3192 8.99436C16.5088 8.94564 15.74 8.61918 15.1422 8.06997L8.99222 11.585C8.98522 11.845 8.94922 12.102 8.88322 12.353L15.1432 15.93C15.5622 15.5455 16.0687 15.269 16.6187 15.1246C17.1687 14.9801 17.7457 14.9721 18.2995 15.1012C18.8534 15.2302 19.3674 15.4925 19.7969 15.8652C20.2264 16.2379 20.5585 16.7098 20.7643 17.2399C20.9702 17.77 21.0436 18.3423 20.9781 18.9072C20.9127 19.4721 20.7104 20.0125 20.3888 20.4815C20.0671 20.9505 19.636 21.334 19.1326 21.5986C18.6292 21.8632 18.0689 22.001 17.5002 22ZM17.5002 17C17.1024 17 16.7209 17.158 16.4396 17.4393C16.1583 17.7206 16.0002 18.1021 16.0002 18.5C16.0002 18.8978 16.1583 19.2793 16.4396 19.5606C16.7209 19.8419 17.1024 20 17.5002 20C17.898 20 18.2796 19.8419 18.5609 19.5606C18.8422 19.2793 19.0002 18.8978 19.0002 18.5C19.0002 18.1021 18.8422 17.7206 18.5609 17.4393C18.2796 17.158 17.898 17 17.5002 17ZM5.50022 9.99997C5.10239 9.99997 4.72086 10.158 4.43956 10.4393C4.15825 10.7206 4.00022 11.1021 4.00022 11.5C4.00022 11.8978 4.15825 12.2793 4.43956 12.5606C4.72086 12.8419 5.10239 13 5.50022 13C5.89804 13 6.27957 12.8419 6.56088 12.5606C6.84218 12.2793 7.00022 11.8978 7.00022 11.5C7.00022 11.1021 6.84218 10.7206 6.56088 10.4393C6.27957 10.158 5.89804 9.99997 5.50022 9.99997ZM17.5002 3.99997C17.3032 3.99997 17.1082 4.03877 16.9262 4.11415C16.7442 4.18953 16.5788 4.30002 16.4396 4.43931C16.3003 4.57859 16.1898 4.74395 16.1144 4.92594C16.039 5.10793 16.0002 5.30298 16.0002 5.49997C16.0002 5.69695 16.039 5.892 16.1144 6.07399C16.1898 6.25598 16.3003 6.42134 16.4396 6.56063C16.5788 6.69992 16.7442 6.8104 16.9262 6.88579C17.1082 6.96117 17.3032 6.99997 17.5002 6.99997C17.898 6.99997 18.2796 6.84193 18.5609 6.56063C18.8422 6.27932 19.0002 5.89779 19.0002 5.49997C19.0002 5.10214 18.8422 4.72061 18.5609 4.43931C18.2796 4.158 17.898 3.99997 17.5002 3.99997Z"
+                                                    fill="black" />
+                                            </svg>
+                                        </a></span>
+                                </div>
+                                <p class="fc_b fs-18s fws ff">Comments</p>
+                                <span class="d-flex"><span><img src="./assests/image/./imgu2.png"
+                                            alt="imgu2 w-100"></span>
+                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
+                                            Doe</span>
+                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
+                                            <br>
+                                            ultrices.</span></span></span>
+                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgu3.png"
+                                            alt="imgu2 w-100"></span>
+                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
+                                            Doe</span>
+                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
+                                            <br>
+                                            ultrices.</span></span></span>
+                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgE4.png"
+                                            alt="imgu2 w-100"></span>
+                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
+                                            Doe</span>
+                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
+                                            <br>
+                                            ultrices.</span></span></span>
+                                <span class="d-flex mt-33"><span><img src="./assests/image/./imgE5.png"
+                                            alt="imgu2 w-100"></span>
+                                    <span class="d-flex flex-column cards"><span class="maincolor fs-18s fws ff">Jhone
+                                            Doe</span>
+                                        <span class="fc_b fs-18s fws ff">Pulvinar viverra ac mauris magna lobortis
+                                            <br>
+                                            ultrices.</span></span></span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -371,7 +302,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images2.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -492,7 +423,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images3.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -615,7 +546,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images4.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -738,7 +669,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images5.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -859,7 +790,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images6.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -980,7 +911,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/images7.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1103,7 +1034,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg1.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1224,7 +1155,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg2.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1345,7 +1276,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg3.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1466,7 +1397,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg4.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1589,7 +1520,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg5.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1712,7 +1643,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg6.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1833,7 +1764,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg7.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1954,7 +1885,7 @@
                     data-target="#exampleModal">
                     <div class="position-relative"><img src="./assests/image/imagesg8.png" alt="gp" class="w-100">
                         <div class="d-flex justify-content-between position-absolute icon">
-                            <span class="d-flex align-items-center">
+                            <span class="d-flex">
                                 <span><a href="#" class="icon-ml"><svg width="24" height="24" viewBox="0 0 24 24"
                                             fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -2076,9 +2007,254 @@
     </div>
 </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-</body>
 
-</html>
+
+
+
+
+
+
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                        <button type="button" class="btn btn-primary"></button>
+                    </div> -->
+
+<!-- <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul> -->
+
+                    <!-- <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+                                                <button type="button" class="btn btn-primary"></button>
+                                            </div> -->
+
+ .d-grid{
+    dispay:grid;
+    grid-template-colomn:repet(4,1fr)
+ }                   
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-md">
+                <li class="nav-item ml_nft">
+                    <a class="nav-link active nav-nft" aria-current="page" href="#">NFTsee</a>
+                </li>
+                <li class="nav-item ml_feed">
+                    <a class="nav-link fs_18 fw_400 fc_b ff" href="#">Feed</a>
+                </li>
+                <li class="nav-item ml_W">
+                    <a class="nav-link fs_18 fw_400 fc_b ff" href="#">Wallet</a>
+                </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Wallet
+                    </a> 
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li> -->
+<!-- <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+</ul>
+<form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search here...</button>
+</form>
+
+<li class="switch position-relative">
+    <input class="switch__checkbox" type="checkbox" id="switch" hidden />
+    <label class="switch__label" for="switch"></label>
+</li>
+<li><a href="#"><img src="./assests/image/imgE1.png" alt="imge1" class="imge2 w-10"></a></li>
+</div>
+</div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="">
+        <div class="my_container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-4">
+                    <a href="#" class="mtb_img1 text-decoration-none"><svg width="60" height="60" viewBox="0 0 60 60"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="60" height="60" fill="url(#pattern0)" />
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_4338_805"
+                                        transform="translate(-0.00833333) scale(0.00833333)" />
+                                </pattern>
+                                <image id="image0_4338_805" width="122" height="120"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#" class=" fs_36 fw_700 fc1 ff ">NFTsee</a>
+                    <a href="#" class="fs_18 ff fc_b ">Feed</a>
+                    <a href="#" class=" ff fs_18 fc1 ">Wallet</a>
+                </div>
+              
+                <div class="d-flex align-items-center">
+                    <ul class="d-flex align-items-center ps-0 mb-0 gap-4">
+                        <li class=" "><input class="input1" type="text" name="Search here..." id="Search here..."
+                                placeholder="Search here..."></li>
+                        <li class="switch position-relative">
+                            <input class="switch__checkbox" type="checkbox" id="switch" hidden />
+                            <label class="switch__label" for="switch"></label>
+                        </li>
+                        <li><a href="#"><img src="./assests/image/imgE1.png" alt="imge1" class="imge2 w-100"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav> -->
+<!-- <nav class="">
+
+
+<!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button> -->
+
+
+
+
+        <div class="my_container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-4">
+                    <a href="#" class="mtb_img1 text-decoration-none"><svg width="60" height="60" viewBox="0 0 60 60"
+                            fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="60" height="60" fill="url(#pattern0)" />
+                            <defs>
+                                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                    <use xlink:href="#image0_4338_805"
+                                        transform="translate(-0.00833333) scale(0.00833333)" />
+                                </pattern>
+                                <image id="image0_4338_805" width="122" height="120"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                    </a>
+                    <a href="#" class=" fs_36 fw_700 fc1 ff ">NFTsee</a>
+                    <a href="#" class="fs_18 ff fc_b ">Feed</a>
+                    <a href="#" class=" ff fs_18 fc1 ">Wallet</a>
+                </div>
+              
+                <div class="d-flex align-items-center">
+                    <ul class="d-flex align-items-center ps-0 mb-0 gap-4">
+                        <li class=" "><input class="input1" type="text" name="Search here..." id="Search here..."
+                                placeholder="Search here..."></li>
+                        <li class="switch position-relative">
+                            <input class="switch__checkbox" type="checkbox" id="switch" hidden />
+                            <label class="switch__label" for="switch"></label>
+                        </li>
+                        <li><a href="#"><img src="./assests/image/imgE1.png" alt="imge1" class="imge2 w-100"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav> -->
